@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getComputerChoice() {
+            const computerChoices = ["rock","paper", "scissors"];
+            const random = math.floor(math.random * 3);
+            cosole.log(getComputerChoice);
+        }
+
+        function playRound(playerChoices, computerChoices) {
+            if (playerChoices === "rock" && computerChoices === "paper"){
+                return("Paper beats Rock");
+            } else if (playerChoices === "rock" && computerChoices === "scissors"){
+                return("Scissors beats Rock");
+            } else if (playerChoices === "paper" && computerChoices === "scissors"){
+                return("Scissors beats Paper");
+            } else if (playerChoices === "rock" && computerChoices === "rock"){
+                return("Play Again");
+            } else if (playerChoices === "paper" && computerChoices === "paper"){
+                return("Play Again");
+            } else if (playerChoices === "scissors" && computerChoices === "scissors"){
+                return("Play Again");
+            }
+        }    
+
+        const computerChoices = getComputerChoice();
+        console.log(playRound(playerChoices, computerChoices));
+        
+    </script>
+</html>

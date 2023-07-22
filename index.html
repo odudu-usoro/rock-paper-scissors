@@ -7,30 +7,35 @@
 </head>
 <body>
     <script>
-        function getComputerChoice() {
-            const computerChoices = ["rock","paper", "scissors"];
-            const random = math.floor(math.random * 3);
-            cosole.log(getComputerChoice);
+
+        function computerChoice() {
+            const rock = "rock";
+            const paper = "paper";
+            const scissors = "scissors";
+            const randomChoice = computerChoice(Math.floor(Math.random() * 3));
+            console.log(randomChoice);
         }
 
-        function playRound(playerChoices, computerChoices) {
-            if (playerChoices === "rock" && computerChoices === "paper"){
-                return("Paper beats Rock");
-            } else if (playerChoices === "rock" && computerChoices === "scissors"){
-                return("Scissors beats Rock");
-            } else if (playerChoices === "paper" && computerChoices === "scissors"){
-                return("Scissors beats Paper");
-            } else if (playerChoices === "rock" && computerChoices === "rock"){
-                return("Play Again");
-            } else if (playerChoices === "paper" && computerChoices === "paper"){
-                return("Play Again");
-            } else if (playerChoices === "scissors" && computerChoices === "scissors"){
-                return("Play Again");
+        function playRound(playerChoice, randomChoice) {
+            const rock = "rock";
+            const paper = "paper";
+            const scissors = "scissors";
+            if (playerChoice === randomChoice) {
+                return ("It's a Tie");
+            } else if (
+                (playerChoice === paper && randomChoice === rock)||
+                (playerChoice === rock && randomChoice === scissors)||
+                (playerChoice === scissors && randomChoice === paper)
+            ) {
+                return ("Player Wins");
+            } else {
+                return("Computer Wins");
             }
-        }    
+    
+        }
 
-        const computerChoices = getComputerChoice();
-        console.log(playRound(playerChoices, computerChoices));
-        
+        const playerChoice = "paper";
+        const randomChoice = computerChoice;
+        console.log(playRound(playerChoice, randomChoice));
     </script>
 </html>

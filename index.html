@@ -3,45 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
 </head>
 <body>
     <script>
 
         function computerChoice() {
-            const rock = "rock";
-            const paper = "paper";
-            const scissors = "scissors";
-            const randomChoice = computerChoice(Math.floor(Math.random() * 3));
-            console.log(randomChoice);
+            const randomChoice = Math.floor(Math.random() * 3);
+            if (randomChoice === 0) {
+                return "rock";
+            }else if (randomChoice === 1){
+                return "paper";
+            }else {
+                return "scissors";
+            }
         }
 
         function playRound(playerChoice, randomChoice) {
-            const rock = "rock";
-            const paper = "paper";
-            const scissors = "scissors";
             if (playerChoice === randomChoice) {
                 return ("It's a Tie");
             } else if (
-                (playerChoice === paper && randomChoice === rock)||
-                (playerChoice === rock && randomChoice === scissors)||
-                (playerChoice === scissors && randomChoice === paper)
+                (playerChoice === "paper" && randomChoice === "rock")||
+                (playerChoice === "rock" && randomChoice === "scissors")||
+                (playerChoice === "scissors" && randomChoice === "paper")
             ) {
-                return ("Player Wins");
+                return "Player Wins";
             } else {
-                return("Computer Wins");
+                return "Computer Wins";
             }
-    
         }
 
-        // function game() {
-        //     const playerChoice = window.prompt("Enter your Choice", "rock");
-        //     const randomChoice = computerChoice;
-        //     console.log(playRound(playerChoice, randomChoice));
-        //     console.log(playRound(playerChoice, randomChoice));
-        //     console.log(playRound(playerChoice, randomChoice));
-        //     console.log(playRound(playerChoice, randomChoice));
-        //     console.log(playRound(playerChoice, randomChoice));
-        // }
+        function game() {
+            const playerChoice = window.prompt("Enter your Choice", "rock");
+            const randomChoice = computerChoice();
+            console.log(playRound(playerChoice, randomChoice));
+        }
+        game();
     </script>
 </html>
